@@ -1,0 +1,22 @@
+    def get_payee_loan_mapping(self) -> List[Dict[str, Any]]:
+        return self._data.get("payee_loan_mapping", [])
+
+
+  aggregation_surplus_no_yardi_link:
+    description: "Aggregation account transaction with no Yardi counterpart, but the day's total account activity nets to zero — expected pass-through account mechanics per business confirmation (2026-09-02 minutes), not a data issue"
+    severity: "Low"
+
+
+
+  - id: 6
+    name: "Payee-Mapped Group Total Match"
+    priority: 6
+    match_on: ["payee_group"]
+    tolerance_days: 0
+
+
+
+payee_loan_mapping:
+  - payee_name: "Sponsor"
+    investment: "Legacy North Sydney (qlau0173)"
+  # add every recurring payee name you see in bank narratives
